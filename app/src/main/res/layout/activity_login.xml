@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_dark_ffffff_222222"
+    tools:context=".activity.LoginActivity">
+
+    <TextView
+        android:id="@+id/logo_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="159dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="Spectrum"
+        android:textColor="@color/light_dark_ED111111_ffffff"
+        android:textSize="48dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/kakao_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/login_kakao_box"
+        android:fontFamily="@font/pretendard_medium"
+        android:text="카카오로 시작하기"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:layout_marginTop="175dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_title" />
+
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/kakao_icon"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/kakao_btn"
+        app:layout_constraintStart_toStartOf="@+id/kakao_btn"
+        app:layout_constraintTop_toTopOf="@+id/kakao_btn" />
+
+    <Button
+        android:id="@+id/google_btn"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/login_google_box"
+        android:fontFamily="@font/roboto"
+        android:text="Google 로 시작하기"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kakao_btn" />
+
+    <ImageView
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="16dp"
+        android:elevation="10dp"
+        android:src="@drawable/google_icon"
+        app:layout_constraintBottom_toBottomOf="@+id/google_btn"
+        app:layout_constraintStart_toStartOf="@+id/google_btn"
+        app:layout_constraintTop_toTopOf="@+id/google_btn" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/light_dark_171C1C1C_0DFFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/google_btn" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/pretendard_regular"
+        android:text="로그인 하시면, 아래 내용에 동의하는 것으로 간주돼요."
+        android:textColor="@color/light_dark_66202020_66FFFFFF"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <TextView
+            android:id="@+id/login_text_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="@string/login_text_1"
+            android:textColor="@color/light_dark_66202020_66FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/login_text_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/login_text_2"
+            android:textColor="@color/light_dark_66202020_66FFFFFF"
+            android:textSize="12dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/login_text_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

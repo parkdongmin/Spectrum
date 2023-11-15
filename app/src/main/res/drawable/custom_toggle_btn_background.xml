@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/custom_interest_btn_true" android:color="@color/light_dark_ffffff_ED111111" android:state_checked="true" />
+    <item android:drawable="@drawable/custom_interest_btn_false" android:color="@color/light_dark_BD252526_A3FFFFFF" android:state_checked="false" />
+    <item android:drawable="@drawable/custom_interest_btn_false" android:color="@color/light_dark_BD252526_A3FFFFFF" />
+</selector>

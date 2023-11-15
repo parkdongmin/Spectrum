@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_weight="1"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/category_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="브랜딩"
+        android:textSize="12dp"
+        android:textColor="@color/light_dark_BD252526_A3FFFFFF"
+        android:background="@drawable/info_box_line_1dp_8r"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>
+
+

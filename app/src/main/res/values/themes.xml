@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Spectrum" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#FFFFFF</item>
+
+    </style>
+
+    <style name="Theme.Spectrum" parent="Base.Theme.Spectrum" />
+
+    <style name="Widget.BottomNavigationView"
+        parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/pretendard_regular</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:minHeight">0dp</item>
+    </style>
+
+    <style name="tabTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">@font/pretendard_medium</item>
+    </style>
+
+</resources>

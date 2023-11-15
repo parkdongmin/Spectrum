@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 사용 못함 -->
+    <item android:state_enabled="false" android:drawable="@drawable/button_disabled_8r"/>
+    <!-- 사용 가능 -->
+    <item android:state_enabled="true" android:drawable="@drawable/button_accent_8r"/>
+</selector>

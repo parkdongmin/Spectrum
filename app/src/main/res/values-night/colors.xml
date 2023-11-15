@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="light_dark_ED111111_ffffff">#FFFFFF</color>
+    <color name="light_dark_ffffff_ED111111">#ED111111</color>
+    <color name="light_dark_ffffff_222222">#222222</color>
+    <color name="light_dark_66202020_66FFFFFF">#66FFFFFF</color>
+    <color name="light_dark_BD252526_A3FFFFFF">#A3FFFFFF</color>
+    <color name="light_dark_8F2C2C2C_A3FFFFFF">#A3FFFFFF</color>
+    <color name="light_dark_211F1F1F_1FFFFFFF">#1FFFFFFF</color>
+    <color name="light_dark_634ECA_917EF1">#917EF1</color>
+    <color name="light_dark_171C1C1C_0DFFFFFF">#0DFFFFFF</color>
+    <color name="light_dark_66202020_0DFFFFFF">#0DFFFFFF</color>
+    <color name="light_dark_66202020_3DFFFFFF">#3DFFFFFF</color>
+    <color name="light_dark_332E2E2E_1AFFFFFF">#1AFFFFFF</color>
+    <color name="light_dark_FFFFFF_0DFFFFFF">#0DFFFFFF</color>
+    <color name="light_dark_171C1C1C_ED111111">#ED111111</color>
+    <color name="light_dark_ED111111_66FFFFFF">#66FFFFFF</color>
+</resources>
