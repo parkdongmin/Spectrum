@@ -14,13 +14,14 @@
     <style name="Widget.BottomNavigationView"
         parent="Widget.Design.BottomNavigationView">
         <item name="fontFamily">@font/pretendard_regular</item>
-        <item name="android:textSize">12dp</item>
-        <item name="android:minHeight">0dp</item>
+        <item name="android:textSize">10dp</item>
+        <item name="android:minHeight">25dp</item>
     </style>
 
     <style name="tabTextStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">14dp</item>
         <item name="android:fontFamily">@font/pretendard_medium</item>
+        <item name="android:layout_width">match_parent</item>
     </style>
 
 </resources>

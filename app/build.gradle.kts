@@ -69,7 +69,7 @@ dependencies {
     // android 12 splashscreen
     implementation ("androidx.core:core-splashscreen:1.0.0-beta02")
 
-    implementation ("androidx.cardview:cardview:1.0.0")
+    // android viewpager2
     implementation ("androidx.viewpager2:viewpager2:1.0.0")
 
 }

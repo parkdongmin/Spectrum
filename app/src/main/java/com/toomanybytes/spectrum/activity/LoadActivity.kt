@@ -20,7 +20,7 @@ class LoadActivity : AppCompatActivity() {
         // 일정 시간 지연 이후 실행하기 위한 코드
         Handler(Looper.getMainLooper()).postDelayed({
             // 일정 시간이 지나면 LoginView로 이동
-            val intent= Intent( this,LoginActivity::class.java)
+            val intent= Intent( this,MainActivity::class.java)
             startActivity(intent)
             finish()
 

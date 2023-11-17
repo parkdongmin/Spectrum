@@ -45,6 +45,7 @@
                 android:spinnerMode="dropdown"
                 android:background="@drawable/spinner_bg"
                 android:overlapAnchor="false"
+                android:popupBackground="@drawable/spinner_popup_background"
                 app:layout_constraintBottom_toBottomOf="@+id/feed_top_title"
                 app:layout_constraintStart_toEndOf="@+id/feed_top_title"
                 app:layout_constraintTop_toTopOf="@+id/feed_top_title" />

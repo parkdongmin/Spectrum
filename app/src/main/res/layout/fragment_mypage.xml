@@ -234,6 +234,7 @@
             android:id="@+id/tl_navigation_view"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            app:tabGravity="fill"
             style="@style/tabTextStyle"
             app:tabIndicatorColor="@color/light_dark_ED111111_ffffff"
             app:tabTextColor="@color/light_dark_66202020_66FFFFFF"
