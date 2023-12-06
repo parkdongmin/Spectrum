@@ -1,0 +1,9 @@
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/photoImageView"
+    android:layout_width="32dp"
+    android:layout_height="32dp"
+    android:layout_marginStart="8dp"
+    android:scaleType="fitXY"
+    android:background="@drawable/rounded_corners_image_card"
+    android:foreground="@drawable/rounded_corners_image_card"
+    />
