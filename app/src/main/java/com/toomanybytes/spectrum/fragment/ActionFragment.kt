@@ -26,7 +26,6 @@ class ActionFragment : Fragment() {
 
         return binding.root
 
-
     }
 
 }
