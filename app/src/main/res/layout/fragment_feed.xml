@@ -1,242 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-        <variable
-            name="viewModel"
-            type="com.toomanybytes.spectrum.viewmodel.FeedViewModel" />
-    </data>
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_dark_ffffff_ED111111">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_con"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/light_dark_ffffff_ED111111">
+        android:layout_height="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/header_con"
+        <TextView
+            android:id="@+id/feed_top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="Feed"
+            android:textColor="@color/light_dark_ED111111_ffffff"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/filter_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:entries="@array/list"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/spinner_bg"
+            android:overlapAnchor="false"
+            android:popupBackground="@drawable/spinner_popup_background"
+            app:layout_constraintBottom_toBottomOf="@+id/feed_top_title"
+            app:layout_constraintStart_toEndOf="@+id/feed_top_title"
+            app:layout_constraintTop_toTopOf="@+id/feed_top_title" />
+
+        <ImageView
+            android:id="@+id/feed_notification_btn"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/notification_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_sub_con"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_con">
+
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/feed_top_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/pretendard_semibold"
-                android:text="Feed"
-                android:textColor="@color/light_dark_ED111111_ffffff"
-                android:textSize="20dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Spinner
-                android:id="@+id/filter_spinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:entries="@array/list"
-                android:spinnerMode="dropdown"
-                android:background="@drawable/spinner_bg"
-                android:overlapAnchor="false"
-                android:popupBackground="@drawable/spinner_popup_background"
-                app:layout_constraintBottom_toBottomOf="@+id/feed_top_title"
-                app:layout_constraintStart_toEndOf="@+id/feed_top_title"
-                app:layout_constraintTop_toTopOf="@+id/feed_top_title" />
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/notification_icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/header_sub_con"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header_con">
-
-            <HorizontalScrollView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="wrap_content">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <ToggleButton
+                    android:id="@+id/feed_category_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/custom_toggle_btn_background"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:checked="true"
+                    android:paddingStart="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@drawable/custom_toggle_btn_background"
+                    android:textOff="잡담"
+                    android:textOn="잡담"
+                    android:textSize="14dp" />
 
-                    <ToggleButton
-                        android:id="@+id/category_all_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="16dp"
-                        android:background="@drawable/custom_toggle_btn_background"
-                        android:fontFamily="@font/pretendard_regular"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:paddingStart="16dp"
-                        android:paddingTop="4dp"
-                        android:paddingEnd="16dp"
-                        android:paddingBottom="4dp"
-                        android:textColor="@drawable/custom_toggle_btn_background"
-                        android:textOff="전체"
-                        android:textOn="전체"
-                        android:textSize="14dp" />
+                <ToggleButton
+                    android:id="@+id/feed_category_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/custom_toggle_btn_background"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@drawable/custom_toggle_btn_background"
+                    android:textOff="Q&amp;A"
+                    android:textOn="Q&amp;A"
+                    android:textSize="14dp" />
 
-                    <ToggleButton
-                        android:id="@+id/category_chat_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/custom_toggle_btn_background"
-                        android:fontFamily="@font/pretendard_regular"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:paddingStart="16dp"
-                        android:paddingTop="4dp"
-                        android:paddingEnd="16dp"
-                        android:paddingBottom="4dp"
-                        android:textColor="@drawable/custom_toggle_btn_background"
-                        android:textOff="잡담"
-                        android:textOn="잡담"
-                        android:textSize="14dp" />
+                <ToggleButton
+                    android:id="@+id/feed_category_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/custom_toggle_btn_background"
+                    android:fontFamily="@font/pretendard_regular"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="16dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="@drawable/custom_toggle_btn_background"
+                    android:textOff="A/B"
+                    android:textOn="A/B"
+                    android:textSize="14dp" />
 
-                    <ToggleButton
-                        android:id="@+id/category_qa_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/custom_toggle_btn_background"
-                        android:fontFamily="@font/pretendard_regular"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:paddingStart="16dp"
-                        android:paddingTop="4dp"
-                        android:paddingEnd="16dp"
-                        android:paddingBottom="4dp"
-                        android:textColor="@drawable/custom_toggle_btn_background"
-                        android:textOff="Q&amp;A"
-                        android:textOn="Q&amp;A"
-                        android:textSize="14dp" />
+            </LinearLayout>
+        </HorizontalScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <ToggleButton
-                        android:id="@+id/category_ab_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/custom_toggle_btn_background"
-                        android:fontFamily="@font/pretendard_regular"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:paddingStart="16dp"
-                        android:paddingTop="4dp"
-                        android:paddingEnd="16dp"
-                        android:paddingBottom="4dp"
-                        android:textColor="@drawable/custom_toggle_btn_background"
-                        android:textOff="A/B"
-                        android:textOn="A/B"
-                        android:textSize="14dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/light_dark_171C1C1C_ED111111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_sub_con">
 
-                    <ToggleButton
-                        android:id="@+id/category_ab_btn0"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/custom_toggle_btn_background"
-                        android:fontFamily="@font/pretendard_regular"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:paddingStart="16dp"
-                        android:paddingTop="4dp"
-                        android:paddingEnd="16dp"
-                        android:paddingBottom="4dp"
-                        android:textColor="@drawable/custom_toggle_btn_background"
-                        android:textOff="A/B"
-                        android:textOn="A/B"
-                        android:textSize="14dp" />
-
-                    <ToggleButton
-                        android:id="@+id/category_ab_btn1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/custom_toggle_btn_background"
-                        android:fontFamily="@font/pretendard_regular"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:paddingStart="16dp"
-                        android:paddingTop="4dp"
-                        android:paddingEnd="16dp"
-                        android:paddingBottom="4dp"
-                        android:textColor="@drawable/custom_toggle_btn_background"
-                        android:textOff="A/B"
-                        android:textOn="A/B"
-                        android:textSize="14dp" />
-
-                    <ToggleButton
-                        android:id="@+id/category_ab_btn2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:layout_marginStart="8dp"
-                        android:background="@drawable/custom_toggle_btn_background"
-                        android:fontFamily="@font/pretendard_regular"
-                        android:minWidth="0dp"
-                        android:minHeight="0dp"
-                        android:paddingStart="16dp"
-                        android:paddingTop="4dp"
-                        android:paddingEnd="16dp"
-                        android:paddingBottom="4dp"
-                        android:textColor="@drawable/custom_toggle_btn_background"
-                        android:textOff="A/B"
-                        android:textOn="A/B"
-                        android:textSize="14dp" />
-
-
-                </LinearLayout>
-            </HorizontalScrollView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <FrameLayout
+            android:id="@+id/feedFrameLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/light_dark_171C1C1C_ED111111"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/header_sub_con">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</layout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,9 +19,13 @@ import com.toomanybytes.spectrum.viewmodel.RegisterViewModel
 class RegisterInterestActivity : AppCompatActivity() {
 
     private lateinit var viewModel: RegisterViewModel
+    lateinit var binding : ActivityRegisterInterestBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding = ActivityRegisterInterestBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val registerIntent = intent
         var name = registerIntent.getStringExtra("name")
@@ -29,11 +33,6 @@ class RegisterInterestActivity : AppCompatActivity() {
 
         // 뷰 모델 초기화
         viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
-
-        // 뷰 바인딩 설정
-        val binding: ActivityRegisterInterestBinding = DataBindingUtil.setContentView(this, R.layout.activity_register_interest)
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
 
 
         // 버튼 상태 감시

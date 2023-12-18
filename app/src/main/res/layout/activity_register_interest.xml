@@ -1,709 +1,531 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-        <variable
-            name="viewModel"
-            type="com.toomanybytes.spectrum.viewmodel.RegisterViewModel" />
-    </data>
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_dark_ffffff_ED111111">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/interest_con_1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/light_dark_ffffff_ED111111"
-        >
+        android:layout_height="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/interest_con_1"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/register_interest_back"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:src="@drawable/left_arrow"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:fontFamily="@font/pretendard_semibold"
-                android:text="시작하기"
-                android:textColor="@color/light_dark_ED111111_ffffff"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/register_interest_back"
-                app:layout_constraintStart_toEndOf="@+id/register_interest_back"
-                app:layout_constraintTop_toTopOf="@+id/register_interest_back" />
-
-            <TextView
-                android:id="@+id/register_interest_top_next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:fontFamily="@font/pretendard_medium"
-                android:text="다음"
-                android:enabled="@{viewModel.isButtonEnabled}"
-                android:textColor="@drawable/next_text_color_selector"
-                android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/interest_con_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/interest_con_1">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="32dp"
-                android:fontFamily="@font/pretendard_bold"
-                android:lineHeight="36dp"
-                android:text="어떤 분야의 디자인을 하시나요?\n혹은, 관심이 있나요?"
-                android:textColor="@color/light_dark_ED111111_ffffff"
-                android:textSize="24dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/interest_con_3"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/interest_con_2">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/pretendard_regular"
-                android:text="3/4"
-                android:textColor="@color/light_dark_BD252526_A3FFFFFF"
-                android:textSize="14dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/toggle_con"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/register_interest_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="36dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/left_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/interest_con_3">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <LinearLayout
-                android:id="@+id/line_1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ToggleButton
-                    android:id="@+id/int_btn_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="편집"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="편집"
-                    android:textOn="편집"
-                    android:layout_marginEnd="8dp"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="브랜딩"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="브랜딩"
-                    android:textOn="브랜딩"
-                    android:layout_marginEnd="8dp"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="광고"
-                    android:layout_marginEnd="8dp"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="광고"
-                    android:textOn="광고"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="타이포그래피"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="타이포그래피"
-                    android:textOn="타이포그래피"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/line_2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:gravity="start"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/line_1">
-
-                <ToggleButton
-                    android:id="@+id/int_btn_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"                    android:text="캘리그라피"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="캘리그라피"
-                    android:textOn="캘리그라피"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"                    android:text="캐릭터"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="캐릭터"
-                    android:textOn="캐릭터"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"                    android:text="일러스트레이션"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="일러스트레이션"
-                    android:textOn="일러스트레이션"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/line_3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/line_2">
-
-                <ToggleButton
-                    android:id="@+id/int_btn_8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="웹"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="웹"
-                    android:textOn="웹"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="UX/UI"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="UX/UI"
-                    android:textOn="UX/UI"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="패키지"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="패키지"
-                    android:textOn="패키지"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="영상"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="영상"
-                    android:textOn="영상"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/line_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/line_3">
-
-                <ToggleButton
-                    android:id="@+id/int_btn_12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="텍스타일"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="텍스타일"
-                    android:textOn="텍스타일"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="제품"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="제품"
-                    android:textOn="제품"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="퍼니처"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="퍼니처"
-                    android:textOn="퍼니처"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="액세서리"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="액세서리"
-                    android:textOn="액세서리"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/line_5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/line_4">
-
-                <ToggleButton
-                    android:id="@+id/int_btn_16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="문구"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="문구"
-                    android:textOn="문구"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="패션"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="패션"
-                    android:textOn="패션"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="운송수단"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="운송수단"
-                    android:textOn="운송수단"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_19"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="환경"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="환경"
-                    android:textOn="환경"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/line_6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/line_5">
-
-                <ToggleButton
-                    android:id="@+id/int_btn_20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="디스플레이"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="디스플레이"
-                    android:textOn="디스플레이"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_21"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:layout_marginEnd="8dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="무대예술"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="무대예술"
-                    android:textOn="무대예술"
-                    android:textSize="16dp" />
-
-                <ToggleButton
-                    android:id="@+id/int_btn_22"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
-                    android:background="@drawable/custom_toggle_btn_background"
-                    android:fontFamily="@font/pretendard_regular"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:onClick="onMyButtonClick"
-                    android:paddingStart="16dp"
-                    android:paddingTop="7dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="7dp"
-                    android:text="세라믹"
-                    android:textColor="@drawable/custom_toggle_btn_background"
-                    android:textOff="세라믹"
-                    android:textOn="세라믹"
-                    android:textSize="16dp" />
-
-            </LinearLayout>
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
-            android:background="@drawable/info_box_line_1dp_8r"
-            app:layout_constraintStart_toStartOf="@+id/toggle_con"
-            app:layout_constraintTop_toBottomOf="@+id/toggle_con">
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="시작하기"
+            android:textColor="@color/light_dark_ED111111_ffffff"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/register_interest_back"
+            app:layout_constraintStart_toEndOf="@+id/register_interest_back"
+            app:layout_constraintTop_toTopOf="@+id/register_interest_back" />
 
-            <ImageView
-                android:id="@+id/info_icon"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:src="@drawable/info_icon"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="12dp"
-                android:fontFamily="@font/pretendard_regular"
-                android:text="5개까지 선택할 수 있고, 나중에 변경할 수 있어요"
-                android:textColor="@color/light_dark_8F2C2C2C_A3FFFFFF"
-                android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/info_icon"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
+        <TextView
+            android:id="@+id/register_interest_top_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="다음"
+            android:textColor="@drawable/next_text_color_selector"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/register_interest_bottom_next"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button_bg_selector"
-                android:enabled="@{viewModel.isButtonEnabled}"
-                android:fontFamily="@font/pretendard_medium"
-                android:text="다음"
-                android:textSize="16dp"
-                android:textColor="@drawable/button_text_selector"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/interest_con_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/interest_con_1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:lineHeight="36dp"
+            android:text="어떤 분야의 디자인을 하시나요?\n혹은, 관심이 있나요?"
+            android:textColor="@color/light_dark_ED111111_ffffff"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/interest_con_3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/interest_con_2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="3/4"
+            android:textColor="@color/light_dark_BD252526_A3FFFFFF"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/toggle_con"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/interest_con_3">
+
+        <LinearLayout
+            android:id="@+id/line_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ToggleButton
+                android:id="@+id/int_btn_1"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="편집"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="편집"
+                android:textOn="편집"
+                android:layout_marginEnd="8dp"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_2"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="브랜딩"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="브랜딩"
+                android:textOn="브랜딩"
+                android:layout_marginEnd="8dp"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_3"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="광고"
+                android:layout_marginEnd="8dp"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="광고"
+                android:textOn="광고"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_4"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="타이포그래피"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="타이포그래피"
+                android:textOn="타이포그래피"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_1">
+
+            <ToggleButton
+                android:id="@+id/int_btn_5"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"                    android:text="캘리그라피"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="캘리그라피"
+                android:textOn="캘리그라피"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_6"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"                    android:text="캐릭터"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="캐릭터"
+                android:textOn="캐릭터"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_7"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="웹"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="웹"
+                android:textOn="웹"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_8"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="UX/UI"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="UX/UI"
+                android:textOn="UX/UI"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_2">
+
+            <ToggleButton
+                android:id="@+id/int_btn_9"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="패키지"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="패키지"
+                android:textOn="패키지"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_10"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:layout_marginEnd="8dp"
+                android:text="영상"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="영상"
+                android:textOn="영상"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_11"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="제품"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="제품"
+                android:textOn="제품"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_12"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="문구"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="문구"
+                android:textOn="문구"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_3">
 
 
-</layout>
+            <ToggleButton
+                android:id="@+id/int_btn_13"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="패션"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="패션"
+                android:textOn="패션"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_14"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="운송수단"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="운송수단"
+                android:textOn="운송수단"
+                android:textSize="16dp" />
+
+            <ToggleButton
+                android:id="@+id/int_btn_15"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:background="@drawable/custom_toggle_btn_background"
+                android:fontFamily="@font/pretendard_regular"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:onClick="onMyButtonClick"
+                android:paddingStart="16dp"
+                android:paddingTop="7dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="7dp"
+                android:text="세라믹"
+                android:textColor="@drawable/custom_toggle_btn_background"
+                android:textOff="세라믹"
+                android:textOn="세라믹"
+                android:textSize="16dp" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/info_box_line_1dp_8r"
+        app:layout_constraintStart_toStartOf="@+id/toggle_con"
+        app:layout_constraintTop_toBottomOf="@+id/toggle_con">
+
+        <ImageView
+            android:id="@+id/info_icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/info_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="5개까지 선택할 수 있고, 나중에 변경할 수 있어요"
+            android:textColor="@color/light_dark_8F2C2C2C_A3FFFFFF"
+            android:textSize="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/info_icon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/register_interest_bottom_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_bg_selector"
+            android:fontFamily="@font/pretendard_medium"
+            android:text="다음"
+            android:textSize="16dp"
+            android:textColor="@drawable/button_text_selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

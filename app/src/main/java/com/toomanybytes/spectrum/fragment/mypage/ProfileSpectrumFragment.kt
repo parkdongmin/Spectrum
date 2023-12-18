@@ -1,4 +1,4 @@
-package com.toomanybytes.spectrum.fragment
+package com.toomanybytes.spectrum.fragment.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.toomanybytes.spectrum.R
 import com.toomanybytes.spectrum.adapter.CurationAdapter
 import com.toomanybytes.spectrum.databinding.FragmentCurationBinding
+import com.toomanybytes.spectrum.databinding.FragmentProfileScrapBinding
 import com.toomanybytes.spectrum.databinding.FragmentProfileSpectrumBinding
 import com.toomanybytes.spectrum.model.CurationModel
 import com.toomanybytes.spectrum.viewmodel.FeedViewModel
@@ -31,9 +32,7 @@ class ProfileSpectrumFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile_spectrum, container, false)
-        binding.lifecycleOwner = this
-        binding.viewModel = viewModel
+        binding = FragmentProfileSpectrumBinding.inflate(layoutInflater)
 
         // 모델 더미 값 넣기
         var models: List<CurationModel>

@@ -1,23 +1,19 @@
-package com.toomanybytes.spectrum.fragment
+package com.toomanybytes.spectrum.fragment.feed
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.viewModels
 import com.toomanybytes.spectrum.R
 import com.toomanybytes.spectrum.adapter.FeedAdapter
-import com.toomanybytes.spectrum.databinding.FragmentProfileScrapBinding
+import com.toomanybytes.spectrum.databinding.FragmentActionBinding
+import com.toomanybytes.spectrum.databinding.FragmentChatFeedBinding
 import com.toomanybytes.spectrum.model.FeedModel
-import com.toomanybytes.spectrum.viewmodel.FeedViewModel
 
-class ProfileScrapFragment : Fragment() {
+class ChatFeedFragment : Fragment() {
 
-    private lateinit var binding: FragmentProfileScrapBinding
-    private val viewModel: FeedViewModel by viewModels()
-
+    private lateinit var binding: FragmentChatFeedBinding
     private lateinit var feedAdapter: FeedAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,9 +25,7 @@ class ProfileScrapFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_profile_scrap, container, false)
-        binding.lifecycleOwner = this
-        binding.viewModel = viewModel
+        binding = FragmentChatFeedBinding.inflate(layoutInflater)
 
         // 모델 더미 값 넣기
         var models: List<FeedModel>
@@ -39,7 +33,7 @@ class ProfileScrapFragment : Fragment() {
 
         models.add(
             FeedModel(
-                R.drawable.ex_1,
+                null,
                 "잡담",
                 "체포·구속·압수 또는 수색을 할 때에는",
                 "포·구속·압수 또는 수색을 할 때에는 적법한 절차에 따라 검사의 신청에 의하여 법관이 발부한 영장을 제시하여야 한다. 다만, 현행범인인 경우와 ...",
@@ -69,12 +63,28 @@ class ProfileScrapFragment : Fragment() {
             )
         )
 
+        models.add(
+            FeedModel(
+                R.drawable.ex_3,
+                "잡담",
+                "건축물 외관의 각진 부분",
+                "날렵하면서도 무게감이 느껴지고 너무 멋있지 않나요? 외장재가 어떻냐에 따라서도 그 느낌이 많이 달라져서 재밌는 것 같아요. 스펙트럼 유저분들은 ...",
+                "#브랜딩 #열정 #용기",
+                R.drawable.sample_3,
+                "HBang",
+                "Hyemin_Bang",
+                "2 시간전",
+                302,
+                70
+            )
+        )
+
         // 어댑터 초기화 및 연결
         feedAdapter = FeedAdapter(models,requireContext()) // 초기 데이터는 빈 리스트로 시작
         binding.recyclerview.adapter = feedAdapter
 
-
         return binding.root
+
 
     }
 

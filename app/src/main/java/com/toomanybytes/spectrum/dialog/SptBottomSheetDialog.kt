@@ -43,6 +43,13 @@ class SptBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheetD
             }
         }
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // BottomSheetDialogFragment의 테마를 설정합니다
+        setStyle(STYLE_NORMAL, R.style.BottomSheetDialogTheme)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -76,8 +83,8 @@ class SptBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheetD
         setupRatio()
 
         // 게시글 카테고리 반복문을 통해 버튼에 onclick 설정
-        for (i in 1..23) {
-            val buttonId = resources.getIdentifier("post_category_$i", "id", requireContext().packageName)
+        for (i in 1..15) {
+            val buttonId = resources.getIdentifier("spt_category_$i", "id", requireContext().packageName)
             view.findViewById<ToggleButton>(buttonId)?.setOnClickListener {
                 val categoryName = when (i) {
                     1 -> "편집"
@@ -86,22 +93,15 @@ class SptBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheetD
                     4 -> "타이포그래피"
                     5 -> "캘리그래피"
                     6 -> "캐릭터"
-                    7 -> "일러스트레이션"
-                    8 -> "웹"
-                    9 -> "UX/UI"
-                    10 -> "패키지"
-                    11 -> "영상"
-                    12 -> "텍스타일"
-                    13 -> "제품"
-                    14 -> "퍼니처"
-                    15 -> "액세서리"
-                    16 -> "문구"
-                    17 -> "패션"
-                    18 -> "운송수단"
-                    19 -> "환경"
-                    20 -> "디스플레이"
-                    21 -> "무대예술"
-                    22 -> "세라믹"
+                    7 -> "웹"
+                    8 -> "UX/UI"
+                    9 -> "패키지"
+                    10 -> "영상"
+                    11 -> "제품"
+                    12 -> "문구"
+                    13 -> "패션"
+                    14 -> "운송수단"
+                    15 -> "세라믹"
                     else -> ""
                 }
                 categoryBtnClick(it, categoryName)
@@ -113,38 +113,38 @@ class SptBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheetD
             adapter.setPhotoList(photoList)
         }
 
-        view.findViewById<EditText>(R.id.post_title).addTextChangedListener { text ->
+        view.findViewById<EditText>(R.id.spt_title).addTextChangedListener { text ->
             viewModel.updateTitleCount(text)
         }
 
-        view.findViewById<EditText>(R.id.post_contents).addTextChangedListener { text ->
+        view.findViewById<EditText>(R.id.spt_contents).addTextChangedListener { text ->
             viewModel.updateContentsCount(text)
         }
 
         viewModel.postCheck.observe(viewLifecycleOwner){
-            view.findViewById<Button>(R.id.post_posting_btn).isEnabled = it
+            view.findViewById<Button>(R.id.spt_posting_btn).isEnabled = it
         }
 
         // ViewModel의 titleCount, contentsCount, image 를 관찰하여 UI 업데이트
         viewModel.titleCount.observe(viewLifecycleOwner) { titleCnt ->
-            view.findViewById<TextView>(R.id.post_title_count).text = "$titleCnt/19"
+            view.findViewById<TextView>(R.id.spt_title_count).text = "$titleCnt/19"
         }
 
         viewModel.contentsCount.observe(viewLifecycleOwner) { contentsCnt ->
-            view.findViewById<TextView>(R.id.post_contents_count).text = "$contentsCnt/300"
+            view.findViewById<TextView>(R.id.spt_contents_count).text = "$contentsCnt/300"
         }
 
         viewModel.selectedImageCount.observe(viewLifecycleOwner) { contentsCnt ->
-            view.findViewById<TextView>(R.id.post_image_count).text = "${adapter.itemCount}/8"
+            view.findViewById<TextView>(R.id.spt_image_count).text = "${adapter.itemCount}/8"
         }
 
         // 이미지 추가 버튼 클릭 이벤트
-        view.findViewById<TextView>(R.id.post_image_add).setOnClickListener {
+        view.findViewById<TextView>(R.id.spt_image_add).setOnClickListener {
             openGallery()
         }
 
         // 취소 버튼 클릭
-        view.findViewById<Button>(R.id.post_cancel_btn).setOnClickListener {
+        view.findViewById<Button>(R.id.spt_cancel_btn).setOnClickListener {
             dismiss()
         }
     } // onViewCreated
@@ -207,8 +207,8 @@ class SptBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheetD
 
     private fun handleBottomSheetDismissed() {
         // BottomSheetDialog가 숨겨질 때의 동작을 구현
-        // 추가한 사진 리사이클러뷰 초기화 수행
-        viewModel.clearRecyclerViewItems()
+        // 추가한 사진 리사이클러뷰 초기화 및 카운팅 초기화 수행
+        viewModel.clearViewItems()
     }
 
 }
