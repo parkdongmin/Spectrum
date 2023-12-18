@@ -18,7 +18,6 @@ import com.toomanybytes.spectrum.adapter.CurationAdapter
 import com.toomanybytes.spectrum.adapter.ViewPager2Adapter
 import com.toomanybytes.spectrum.databinding.FragmentCurationBinding
 import com.toomanybytes.spectrum.databinding.FragmentMypageBinding
-import com.toomanybytes.spectrum.databinding.FragmentNoticeBinding
 import com.toomanybytes.spectrum.model.CategoryModel
 import com.toomanybytes.spectrum.model.CurationModel
 import com.toomanybytes.spectrum.viewmodel.FeedViewModel
@@ -33,14 +32,16 @@ class MypageFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("asd","asdfffsssdddsssff")
-        Log.d("asd","asdfffsssdddsssfsssf")
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMypageBinding.inflate(layoutInflater)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mypage, container, false)
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
         binding.userProfile.clipToOutline = true
 
         // 모델 더미 값 넣기
