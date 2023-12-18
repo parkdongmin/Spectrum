@@ -31,7 +31,7 @@ class MypageFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("asd","asdfffsssddd")
+        Log.d("asd","asdfffsssdddfff")
     }
 
     override fun onCreateView(
