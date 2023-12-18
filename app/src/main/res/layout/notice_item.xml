@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="16dp"
+    android:paddingTop="16dp"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.toomanybytes.spectrum.RoundedTopCornerImageView
+            android:id="@+id/notice_image"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ex_4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/feed_contents_con"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners_bottom_card"
+            android:paddingBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notice_image">
+
+            <TextView
+                android:id="@+id/notice_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/notice_category_background_8r"
+                android:fontFamily="@font/pretendard_medium"
+                android:paddingStart="8dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/light_dark_ffffff_ED111111"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="공지사항"/>
+
+            <TextView
+                android:id="@+id/notice_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:textColor="@color/light_dark_ED111111_ffffff"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/notice_category"
+                app:layout_constraintStart_toEndOf="@+id/notice_category"
+                app:layout_constraintTop_toTopOf="@+id/notice_category"
+                tools:text="스펙트럼 사용자 분들, 안녕하세요!" />
+
+            <TextView
+                android:id="@+id/notice_contents"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:lineHeight="20dp"
+                android:textColor="@color/light_dark_BD252526_A3FFFFFF"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/notice_category"
+                tools:text="@string/sample_string" />
+
+            <TextView
+                android:id="@+id/notice_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:text="더 보기"
+                android:textColor="@color/light_dark_66202020_66FFFFFF"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="@+id/notice_contents"
+                app:layout_constraintTop_toBottomOf="@+id/notice_contents" />
+
+            <ImageView
+                android:id="@+id/notice_profile"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/sample"
+                android:background="@drawable/rounded_corners_profile_card"
+                app:layout_constraintStart_toStartOf="@+id/notice_more"
+                app:layout_constraintTop_toBottomOf="@+id/notice_more" />
+
+            <TextView
+                android:id="@+id/notice_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/pretendard_medium"
+                android:textColor="@color/light_dark_ED111111_ffffff"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/notice_profile"
+                app:layout_constraintStart_toEndOf="@+id/notice_profile"
+                app:layout_constraintTop_toTopOf="@+id/notice_profile"
+                tools:text="최고당" />
+
+            <TextView
+                android:id="@+id/notice_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:textColor="@color/light_dark_BD252526_A3FFFFFF"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/notice_name"
+                app:layout_constraintStart_toEndOf="@+id/notice_name"
+                app:layout_constraintTop_toTopOf="@+id/notice_name"
+                android:text="@string/handle_string" />
+
+            <TextView
+                android:id="@+id/notice_handle_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/pretendard_regular"
+                android:textColor="@color/light_dark_BD252526_A3FFFFFF"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/notice_at"
+                app:layout_constraintStart_toEndOf="@+id/notice_at"
+                app:layout_constraintTop_toTopOf="@+id/notice_at"
+                tools:text="Android_pdm" />
+
+            <TextView
+                android:id="@+id/notice_last_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:text="2시간 전"
+                android:textColor="@color/light_dark_66202020_66FFFFFF"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/notice_handle_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/notice_handle_name" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

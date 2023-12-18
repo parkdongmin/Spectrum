@@ -18,10 +18,10 @@ import com.toomanybytes.spectrum.model.FeedModel
 import kotlin.math.roundToInt
 
 
-class FeedAdapter(
+class QaAdapter(
     var models: ArrayList<FeedModel>,
     var context: Context,
-) : RecyclerView.Adapter<FeedAdapter.AdapterViewHolder>() {
+) : RecyclerView.Adapter<QaAdapter.AdapterViewHolder>() {
 
     private lateinit var v : View
     private lateinit var userProfile : View
@@ -34,7 +34,7 @@ class FeedAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterViewHolder {
-        v = LayoutInflater.from(parent.context).inflate(R.layout.feed_item, parent, false)
+        v = LayoutInflater.from(parent.context).inflate(R.layout.qa_item, parent, false)
         return AdapterViewHolder(v)
     }
 
@@ -43,10 +43,10 @@ class FeedAdapter(
 
         if(models[position].image == null){
             holder.image.visibility = View.GONE
-            holder.contentsCon.setBackgroundResource(R.drawable.rounded_corners_card)
+            val layoutParams = holder.itemView.findViewById<TextView>(R.id.feed_category).layoutParams as ViewGroup.MarginLayoutParams
+            layoutParams.leftMargin = 16.dpToPx(holder.itemView.context) // 여백 크기를 dpToPx 함수로 변환하여 설정
         }else{
             holder.image.visibility = View.VISIBLE
-            holder.contentsCon.setBackgroundResource(R.drawable.rounded_corners_bottom_card)
             models[position].image?.let { holder.image.setImageResource(it) }
         }
 
@@ -57,14 +57,14 @@ class FeedAdapter(
         holder.profile.setImageResource(models[position].profile)
         holder.name.text = models[position].name
         holder.handleName.text = models[position].handleName
-        holder.heart.text = "${models[position].heart}"
         holder.comment.text = "${models[position].comment}"
 
         holder.profile.clipToOutline = true
+        holder.image.clipToOutline = true
 
         // 마지막 아이템 여백 설정
         if (position == itemCount - 1) {
-            val layoutParams = holder.itemView.findViewById<ConstraintLayout>(R.id.feed_con).layoutParams as ViewGroup.MarginLayoutParams
+            val layoutParams = holder.itemView.findViewById<ConstraintLayout>(R.id.qa_con).layoutParams as ViewGroup.MarginLayoutParams
             layoutParams.bottomMargin = 16.dpToPx(holder.itemView.context) // 여백 크기를 dpToPx 함수로 변환하여 설정
         }
 
@@ -79,17 +79,15 @@ class FeedAdapter(
     }
 
     inner class AdapterViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val image: ImageView = view.findViewById(R.id.feed_image)
+        val image: ImageView = view.findViewById(R.id.qa_image)
         val category: TextView = view.findViewById(R.id.feed_category)
-        val title: TextView = view.findViewById(R.id.feed_title)
-        val contents: TextView = view.findViewById(R.id.feed_contents)
-        val tags: TextView = view.findViewById(R.id.feed_tags)
-        val profile: ImageView = view.findViewById(R.id.feed_profile)
-        val name: TextView = view.findViewById(R.id.feed_name)
-        val handleName: TextView = view.findViewById(R.id.feed_handle_name)
-        val heart: TextView = view.findViewById(R.id.feed_heart_count)
-        val comment: TextView = view.findViewById(R.id.feed_comment_count)
-        val contentsCon: ConstraintLayout = view.findViewById(R.id.feed_contents_con)
+        val title: TextView = view.findViewById(R.id.qa_title)
+        val contents: TextView = view.findViewById(R.id.qa_contents)
+        val tags: TextView = view.findViewById(R.id.qa_tags)
+        val profile: ImageView = view.findViewById(R.id.qa_profile)
+        val name: TextView = view.findViewById(R.id.qa_name)
+        val handleName: TextView = view.findViewById(R.id.qa_handle_name)
+        val comment: TextView = view.findViewById(R.id.qa_comment_count)
     }
 
     private fun Int.dpToPx(context: Context): Int {

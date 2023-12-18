@@ -1,5 +1,6 @@
 package com.toomanybytes.spectrum.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,10 +13,12 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayoutMediator
 import com.toomanybytes.spectrum.R
+import com.toomanybytes.spectrum.activity.NotificationActivity
 import com.toomanybytes.spectrum.adapter.CategoryAdapter
 import com.toomanybytes.spectrum.adapter.CurationAdapter
 import com.toomanybytes.spectrum.adapter.ViewPager2Adapter
 import com.toomanybytes.spectrum.databinding.FragmentCurationBinding
+import com.toomanybytes.spectrum.databinding.FragmentFeedBinding
 import com.toomanybytes.spectrum.databinding.FragmentMypageBinding
 import com.toomanybytes.spectrum.model.CategoryModel
 import com.toomanybytes.spectrum.model.CurationModel
@@ -37,9 +40,7 @@ class MypageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_mypage, container, false)
-        binding.lifecycleOwner = this
-        binding.viewModel = viewModel
+        binding = FragmentMypageBinding.inflate(layoutInflater)
 
         binding.userProfile.clipToOutline = true
 
@@ -96,6 +97,10 @@ class MypageFragment : Fragment() {
             }
         }.attach()
 
+        binding.mypageNotificationBtn.setOnClickListener {
+            val intent= Intent( activity, NotificationActivity::class.java)
+            startActivity(intent)
+        }
 
         return binding.root
 

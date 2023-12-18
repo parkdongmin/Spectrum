@@ -5,6 +5,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,9 @@ class PostBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheet
 
     private lateinit var adapter: PhotoAdapter
 
+    // 선택한 카테고리 버튼
+    private var selectedCategoryId: Int = 0
+
     // 이미지를 단일 선택인지 여러개 선택인지 체크하며, 등록한 이미지의 개수를 업데이트 합니다
     private val pickImages = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == AppCompatActivity.RESULT_OK) {
@@ -43,6 +47,13 @@ class PostBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheet
             }
         }
     }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        // BottomSheetDialogFragment의 테마를 설정합니다
+        setStyle(STYLE_NORMAL, R.style.BottomSheetDialogTheme)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -61,6 +72,8 @@ class PostBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheet
         bottomSheetView.findViewById<RecyclerView>(R.id.recyclerview).layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         bottomSheetView.findViewById<RecyclerView>(R.id.recyclerview).adapter = adapter
+
+        setupCategoryButtons()
 
         return bottomSheetView
     }
@@ -172,6 +185,7 @@ class PostBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheet
         // 카테고리의 클릭이벤트로 인한 UI 변환을 체크합니다
         if (view is ToggleButton) {
             val toggle = viewModel.addCategory(category)
+            Log.d("categoryBtnClick","categoryBtnClick")
             if (!toggle) {
                 view.isChecked = false
             }
@@ -188,8 +202,28 @@ class PostBottomSheetDialog(private val viewModel: WriteViewModel) : BottomSheet
 
     private fun handleBottomSheetDismissed() {
         // BottomSheetDialog가 숨겨질 때의 동작을 구현
-        // 추가한 사진 리사이클러뷰 초기화 수행
-        viewModel.clearRecyclerViewItems()
+        // 추가한 사진 리사이클러뷰 초기화 및 카운팅 초기화 수행
+        viewModel.clearViewItems()
+    }
+
+    private fun setupCategoryButtons() {
+        // 필터 버튼 클릭 이벤트 만들기
+        for (i in 1..15) {
+            val buttonId = resources.getIdentifier("post_category_$i", "id", requireContext().packageName)
+            view?.findViewById<ToggleButton>(buttonId)?.setOnClickListener {
+                categoryBtnClick(buttonId)
+            }
+        }
+    }
+
+    private fun categoryBtnClick(categoryId: Int) {
+        // 선택된 필터 버튼 클릭 이외에 버튼 해제하기
+        if (selectedCategoryId != 0) {
+            view?.findViewById<ToggleButton>(selectedCategoryId)?.isChecked = false
+        }
+
+        view?.findViewById<ToggleButton>(categoryId)?.isChecked = true
+        selectedCategoryId = categoryId
     }
 
 }

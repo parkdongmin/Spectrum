@@ -3,9 +3,9 @@ package com.toomanybytes.spectrum.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.toomanybytes.spectrum.fragment.ProfilePostFragment
-import com.toomanybytes.spectrum.fragment.ProfileScrapFragment
-import com.toomanybytes.spectrum.fragment.ProfileSpectrumFragment
+import com.toomanybytes.spectrum.fragment.mypage.ProfilePostFragment
+import com.toomanybytes.spectrum.fragment.mypage.ProfileScrapFragment
+import com.toomanybytes.spectrum.fragment.mypage.ProfileSpectrumFragment
 
 class ViewPager2Adapter(activity: FragmentActivity) : FragmentStateAdapter(activity) {
 

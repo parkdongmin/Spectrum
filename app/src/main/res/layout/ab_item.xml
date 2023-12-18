@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/feed_con"
+    android:id="@+id/qa_con"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="8dp"
@@ -17,29 +17,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.toomanybytes.spectrum.RoundedTopCornerImageView
-            android:id="@+id/feed_image"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ex_3"
-            android:elevation="1dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/feed_contents_con"
+            android:id="@+id/qa_contents_con"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corners_bottom_card"
+            android:background="@drawable/rounded_corners_card"
             android:paddingBottom="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/feed_image">
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/ab_li_layout"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ab_image_1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/rounded_corners_card"
+                    android:src="@drawable/sample"/>
+
+                <ImageView
+                    android:id="@+id/ab_image_2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    android:background="@drawable/rounded_corners_card"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/sample_3"/>
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/feed_category"
+                android:id="@+id/ab_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -50,90 +73,51 @@
                 android:paddingTop="2dp"
                 android:paddingEnd="8dp"
                 android:paddingBottom="2dp"
+                android:text="A/B"
                 android:textColor="@color/light_dark_ffffff_ED111111"
                 android:textSize="12dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="잡담" />
+                app:layout_constraintTop_toBottomOf="@+id/ab_li_layout" />
 
             <TextView
-                android:id="@+id/feed_title"
+                android:id="@+id/ab_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/pretendard_medium"
                 android:textColor="@color/light_dark_ED111111_ffffff"
                 android:textSize="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/feed_category"
-                app:layout_constraintStart_toEndOf="@+id/feed_category"
-                app:layout_constraintTop_toTopOf="@+id/feed_category"
+                app:layout_constraintBottom_toBottomOf="@+id/ab_category"
+                app:layout_constraintStart_toEndOf="@+id/ab_category"
+                app:layout_constraintTop_toTopOf="@+id/ab_category"
                 tools:text="체포·구속·압수 또는 수색을 할 때에는" />
 
-            <TextView
-                android:id="@+id/feed_contents"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:fontFamily="@font/pretendard_regular"
-                android:lineHeight="20dp"
-                android:textColor="@color/light_dark_BD252526_A3FFFFFF"
-                android:textSize="12dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/feed_category"
-                tools:text="@string/sample_string" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/pretendard_medium"
-                android:text="더 보기"
-                android:textColor="@color/light_dark_66202020_66FFFFFF"
-                android:textSize="12dp"
-                app:layout_constraintStart_toStartOf="@+id/feed_contents"
-                app:layout_constraintTop_toBottomOf="@+id/feed_contents" />
-
-            <TextView
-                android:id="@+id/feed_tags"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/pretendard_medium"
-                android:textColor="@color/light_dark_634ECA_917EF1"
-                android:textSize="12dp"
-                app:layout_constraintStart_toStartOf="@+id/textView2"
-                app:layout_constraintTop_toBottomOf="@+id/textView2"
-                tools:text="#태그1 #태그2 #태그3" />
-
             <ImageView
-                android:id="@+id/feed_profile"
+                android:id="@+id/ab_profile"
                 android:layout_width="28dp"
                 android:layout_height="28dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@drawable/rounded_corners_profile_card"
                 android:src="@drawable/sample"
-                app:layout_constraintStart_toStartOf="@+id/feed_tags"
-                app:layout_constraintTop_toBottomOf="@+id/feed_tags" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ab_title" />
 
             <TextView
-                android:id="@+id/feed_name"
+                android:id="@+id/ab_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:fontFamily="@font/pretendard_medium"
                 android:textColor="@color/light_dark_ED111111_ffffff"
                 android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@+id/feed_profile"
-                app:layout_constraintStart_toEndOf="@+id/feed_profile"
-                app:layout_constraintTop_toTopOf="@+id/feed_profile"
+                app:layout_constraintBottom_toBottomOf="@+id/ab_profile"
+                app:layout_constraintStart_toEndOf="@+id/ab_profile"
+                app:layout_constraintTop_toTopOf="@+id/ab_profile"
                 tools:text="최고당" />
 
             <TextView
-                android:id="@+id/feed_at"
+                android:id="@+id/ab_at"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -141,24 +125,24 @@
                 android:text="@string/handle_string"
                 android:textColor="@color/light_dark_BD252526_A3FFFFFF"
                 android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@+id/feed_name"
-                app:layout_constraintStart_toEndOf="@+id/feed_name"
-                app:layout_constraintTop_toTopOf="@+id/feed_name" />
+                app:layout_constraintBottom_toBottomOf="@+id/ab_name"
+                app:layout_constraintStart_toEndOf="@+id/ab_name"
+                app:layout_constraintTop_toTopOf="@+id/ab_name" />
 
             <TextView
-                android:id="@+id/feed_handle_name"
+                android:id="@+id/ab_handle_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/pretendard_regular"
                 android:textColor="@color/light_dark_BD252526_A3FFFFFF"
                 android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@+id/feed_at"
-                app:layout_constraintStart_toEndOf="@+id/feed_at"
-                app:layout_constraintTop_toTopOf="@+id/feed_at"
+                app:layout_constraintBottom_toBottomOf="@+id/ab_at"
+                app:layout_constraintStart_toEndOf="@+id/ab_at"
+                app:layout_constraintTop_toTopOf="@+id/ab_at"
                 tools:text="Android_pdm" />
 
             <TextView
-                android:id="@+id/feed_last_time"
+                android:id="@+id/ab_last_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
@@ -166,16 +150,16 @@
                 android:text="2시간 전"
                 android:textColor="@color/light_dark_66202020_66FFFFFF"
                 android:textSize="12dp"
-                app:layout_constraintBottom_toBottomOf="@+id/feed_handle_name"
+                app:layout_constraintBottom_toBottomOf="@+id/ab_handle_name"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/feed_handle_name" />
+                app:layout_constraintTop_toTopOf="@+id/ab_handle_name" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/feed_more_btn"
+            android:id="@+id/ab_more_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/feed_bottom_box_line_1dp_16r"
@@ -186,7 +170,7 @@
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/feed_contents_con">
+            app:layout_constraintTop_toBottomOf="@+id/qa_contents_con">
 
             <ImageView
                 android:layout_width="20dp"
@@ -201,7 +185,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/feed_archive_btn"
+            android:id="@+id/ab_archive_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -210,9 +194,9 @@
             android:paddingTop="10dp"
             android:paddingEnd="16dp"
             android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/feed_more_btn"
-            app:layout_constraintEnd_toStartOf="@+id/feed_more_btn"
-            app:layout_constraintTop_toTopOf="@+id/feed_more_btn">
+            app:layout_constraintBottom_toBottomOf="@+id/ab_more_btn"
+            app:layout_constraintEnd_toStartOf="@+id/ab_more_btn"
+            app:layout_constraintTop_toTopOf="@+id/ab_more_btn">
 
             <ImageView
                 android:layout_width="20dp"
@@ -227,7 +211,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/feed_comment_btn"
+            android:id="@+id/qa_comment_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -236,9 +220,9 @@
             android:paddingTop="10dp"
             android:paddingEnd="16dp"
             android:paddingBottom="10dp"
-            app:layout_constraintBottom_toBottomOf="@+id/feed_more_btn"
-            app:layout_constraintEnd_toStartOf="@+id/feed_archive_btn"
-            app:layout_constraintTop_toTopOf="@+id/feed_more_btn">
+            app:layout_constraintBottom_toBottomOf="@+id/ab_more_btn"
+            app:layout_constraintEnd_toStartOf="@+id/ab_archive_btn"
+            app:layout_constraintTop_toTopOf="@+id/ab_more_btn">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -255,7 +239,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/feed_comment_count"
+                    android:id="@+id/ab_comment_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="10"
@@ -270,7 +254,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/feed_heart_btn"
+            android:id="@+id/ab_vote_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/feed_bottom_box_line_1dp_16r"
@@ -279,9 +263,9 @@
             android:paddingEnd="16dp"
             android:paddingBottom="10dp"
             android:layout_marginEnd="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/feed_more_btn"
-            app:layout_constraintEnd_toStartOf="@+id/feed_comment_btn"
-            app:layout_constraintTop_toTopOf="@+id/feed_more_btn">
+            app:layout_constraintBottom_toBottomOf="@+id/ab_more_btn"
+            app:layout_constraintEnd_toStartOf="@+id/qa_comment_btn"
+            app:layout_constraintTop_toTopOf="@+id/ab_more_btn">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -294,15 +278,15 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:src="@drawable/heart_icon" />
+                    android:src="@drawable/vote_icon" />
 
                 <TextView
-                    android:id="@+id/feed_heart_count"
+                    android:id="@+id/ab_vote_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:fontFamily="@font/pretendard_regular"
-                    android:text="100"
+                    android:text="10"
                     android:textColor="@color/light_dark_66202020_66FFFFFF"
                     android:textSize="16dp" />
 
@@ -310,9 +294,6 @@
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

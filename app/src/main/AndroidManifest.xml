@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Spectrum"
         tools:targetApi="31">
         <activity
+            android:name=".activity.NotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.RegisterJobActivity"
             android:exported="false" />
         <activity
@@ -48,7 +51,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>

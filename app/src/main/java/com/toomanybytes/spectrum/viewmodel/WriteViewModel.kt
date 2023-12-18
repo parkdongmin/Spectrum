@@ -49,9 +49,13 @@ class WriteViewModel : ViewModel() {
         selectedImageCount.value = count
     }
 
-    fun clearRecyclerViewItems() {
+    fun clearViewItems() {
         photoList.value = emptyList()  // 또는 photoList.value = mutableListOf()
         selectedImageCount.value = 0
+        contentsCount.value = 0
+        titleCount.value = 0
+        categoryKeyWord.clear()
+        postCheck.value = false
     }
 
     fun removePhoto(position: Int) {

@@ -9,15 +9,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.toomanybytes.spectrum.R
 import com.toomanybytes.spectrum.databinding.ActivityRegisterHandleBinding
+import com.toomanybytes.spectrum.databinding.ActivityRegisterInterestBinding
 import com.toomanybytes.spectrum.databinding.ActivityRegisterJobBinding
 import com.toomanybytes.spectrum.viewmodel.RegisterViewModel
 
 class RegisterJobActivity : AppCompatActivity() {
 
     private lateinit var viewModel: RegisterViewModel
+    lateinit var binding : ActivityRegisterJobBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding = ActivityRegisterJobBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val registerIntent = intent
         var name = registerIntent.getStringExtra("name")
@@ -26,11 +31,6 @@ class RegisterJobActivity : AppCompatActivity() {
 
         // 뷰 모델 초기화
         viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
-
-        // 뷰 바인딩 설정
-        val binding: ActivityRegisterJobBinding = DataBindingUtil.setContentView(this, R.layout.activity_register_job)
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
 
         // 버튼 상태 감시
         viewModel.isButtonEnabled.observe(this, Observer { isEnabled ->

@@ -4,31 +4,32 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.toomanybytes.spectrum.R
+import com.toomanybytes.spectrum.databinding.ActivityRegisterJobBinding
 import com.toomanybytes.spectrum.databinding.ActivityRegisterNameBinding
 import com.toomanybytes.spectrum.viewmodel.RegisterViewModel
 
 class RegisterNameActivity : AppCompatActivity() {
 
     private lateinit var viewModel: RegisterViewModel
+    lateinit var binding : ActivityRegisterNameBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding = ActivityRegisterNameBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val registerIntent = intent
         var name = registerIntent.getStringExtra("name")
 
         // 뷰 모델 초기화
         viewModel = ViewModelProvider(this).get(RegisterViewModel::class.java)
-
-        // 뷰 바인딩 설정
-        val binding: ActivityRegisterNameBinding = DataBindingUtil.setContentView(this, R.layout.activity_register_name)
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
 
         // 뒤로가기 해서 왔을때 이름 자동 입력
         if(name != null){
@@ -44,7 +45,16 @@ class RegisterNameActivity : AppCompatActivity() {
         // 버튼 상태 감시
         viewModel.isButtonEnabled.observe(this, Observer { isEnabled ->
             binding.registerNameBottomNext.isEnabled = isEnabled
+            when(isEnabled){
+                true -> binding.nicknameBackspace.visibility = View.VISIBLE
+                false -> binding.nicknameBackspace.visibility = View.INVISIBLE
+            }
         })
+
+        // 백스페이스 클릭시 editText 초기화
+        binding.nicknameBackspace.setOnClickListener {
+            binding.nicknameEdit.text = null
+        }
 
         binding.registerNameTopNext.setOnClickListener {
             if(viewModel.isButtonEnabled.hasObservers()){
